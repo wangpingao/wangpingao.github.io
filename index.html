@@ -322,61 +322,14 @@
 
       
         
-          
-            <p>前言：博主目前大三，Java菜鸟级选手，搭建博客主要为了记录自己学习的心得体会，也欢迎各路大神指教。</p>
-<p>第一篇博客就记录一下使用Hexo搭建的完整过程。</p>
-<p>个人博客地址：<a href="https://wangpingao.github.io/">https://wangpingao.github.io/</a></p>
-<p>大致流程：</p>
-<ol>
-<li>搭建Node.js环境</li>
-<li>搭建Git环境</li>
-<li>Github配置</li>
-<li>安装配置Hexo</li>
-<li>关联Hexo与Github Pages</li>
-</ol>
-<h1 id="搭建Node-js环境"><a href="#搭建Node-js环境" class="headerlink" title="搭建Node.js环境"></a>搭建Node.js环境</h1><blockquote>
-<p>为什么搭建Node.js环境？-因为Hexo博客系统是基于Node.js编写的</p>
-</blockquote>
-<p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境，可以在非浏览器环境下，解释运行 JS 代码。</p>
-<p>在Node.js官网：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> 下载安装包 <code>v8.11.1 LTS</code></p>
-<p>保持默认设置，一路Next。</p>
-<p>打开命令提示符，输入 <code>node -v</code>、<code>npm -v</code> ,出现版本号说明安装成功。第一步完成。</p>
-<p><img src="/2018/05/07/Hexo博客搭建入门教程/nodejs.jpg" alt="Node.js"></p>
-<h1 id="搭建Git环境"><a href="#搭建Git环境" class="headerlink" title="搭建Git环境"></a>搭建Git环境</h1><blockquote>
-<p>为什么搭建Git环境？-因为需要把本地的网页和文章等提交到GitHub上。</p>
-</blockquote>
-<p>Git 是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
-<p>在Git官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a>  下载安装包： <code>Git-2.13.0-64-bit.exe</code></p>
-<p>一路Next安装，安装成功。</p>
-<p>打开 <code>Git Bash</code> ，输入 <code>git --version</code> ，出现版本号说明Git环境配置成功，第二步完成。</p>
-<p><img src="/2018/05/07/Hexo博客搭建入门教程/git.jpg" alt="Git"></p>
-<h1 id="GitHub配置"><a href="#GitHub配置" class="headerlink" title="GitHub配置"></a>GitHub配置</h1><p>GitHub 是一个代码托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。</p>
-<p>Github地址：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
-<p>创建仓库： yourname.github.io</p>
-<p>注意：<code>yourname</code> 必须是你的用户名</p>
-<p><img src="/2018/05/07/Hexo博客搭建入门教程/github.jpg" alt="github"></p>
-<p>因为博主实现已经创建仓库，所以图片中提示已存在。</p>
-<p>访问 yourname.github.io，如果可以正常访问，那么 Github 配置成功。</p>
-<p>到此搭建 Hexo 博客的相关环境配置已经完成，下面开始讲解 Hexo 的相关操作。</p>
-<h1 id="安装配置Hexo"><a href="#安装配置Hexo" class="headerlink" title="安装配置Hexo"></a>安装配置Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p>Hexo官网： <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-<p>使用npm安装Hexo：在命令行输入 <code>npm install hexo-cli -g</code></p>
-<p>查看Hexo版本 <code>hexo version</code></p>
-<p><img src="/2018/05/07/Hexo博客搭建入门教程/hexo.jpg" alt="hexo"></p>
-<p>安装 Hexo 完成后，请执行下列命令来初始化 Hexo，用户名改成你的，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1	hexo init wangpingao.github.io</span><br><span class="line">2	cd wangpingao.github.io</span><br><span class="line">3	npm install</span><br></pre></td></tr></table></figure>
-<p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy         #需要部署的文件</span><br><span class="line">├── node_modules    #Hexo插件</span><br><span class="line">├── public          #生成的静态网页文件</span><br><span class="line">├── scaffolds       #模板</span><br><span class="line">├── source          #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里</span><br><span class="line">| ├── _drafts       #草稿</span><br><span class="line">| └── _posts        #文章</span><br><span class="line">├── themes          #主题</span><br><span class="line">├── _config.yml     #全局配置文件</span><br><span class="line">└── package.json    #npm 依赖等</span><br></pre></td></tr></table></figure>
-<p>运行本地 Hexo 服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1	hexo server</span><br></pre></td></tr></table></figure>
-<p>您的网站会在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 下启动。如果 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 能够正常访问，则说明 Hexo 本地博客已经搭建起来了。下面，我们要部署到Github。</p>
-<h1 id="关联Hexo与Github-Pages"><a href="#关联Hexo与Github-Pages" class="headerlink" title="关联Hexo与Github Pages"></a>关联Hexo与Github Pages</h1><p>在<code>_config.yml</code>文件中，找到<code>Deployment</code>，然后按照如下修改，用户名改成你的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:wangpingao/wangpingao.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>本地文件提交到Github Pages</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1	//删除旧public文件</span><br><span class="line">2	hexo clean</span><br><span class="line">3	//生成新public文件</span><br><span class="line">4	hexo generate</span><br><span class="line">5	//开始部署</span><br><span class="line">6	hexo deploye</span><br></pre></td></tr></table></figure>
-<p>在浏览器中输入<a href="https://wangpingao.github.io/">https://wangpingao.github.io/</a>（用户名改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联了。</p>
-
-          
+          前言：博主目前大三，Java菜鸟级选手，搭建博客主要为了记录自己学习的心得体会，也欢迎各路大神指教。第一篇博客就记录一下使用Hexo搭建的完整过程。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/07/Hexo博客搭建入门教程/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
